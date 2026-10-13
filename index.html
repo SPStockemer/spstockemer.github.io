@@ -26,120 +26,83 @@ body {
 .hero {
   position: relative;
   isolation: isolate;
-  width: 100%;
   min-height: 100vh;
   min-height: 100svh;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background-image:
+  background:
     linear-gradient(
       to bottom,
       rgba(0,0,0,.10),
       rgba(0,0,0,.08) 50%,
       rgba(0,0,0,.55)
     ),
-    url("Moonlit%20Fog%20Over%20the%20Haunted%20Cemetery.png");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    url("Moonlit%20Fog%20Over%20the%20Haunted%20Cemetery.png")
+      center / cover no-repeat;
 }
 
 /* MOVING FOG BANKS */
 
-.fog {
+.fog-bank {
   position: absolute;
-  left: -60%;
-  width: 220%;
-  height: 55%;
-  pointer-events: none;
+  left: 0;
+  width: 65vw;
+  min-width: 390px;
+  height: clamp(95px, 19vh, 220px);
   z-index: 1;
+  pointer-events: none;
+  opacity: .75;
+  filter: blur(15px);
   will-change: transform;
+  transform: translate3d(-110vw, 0, 0);
+  animation: crossing 17s linear infinite;
 }
 
-.fog-one {
-  bottom: -12%;
-  opacity: .85;
-
-  background:
-    radial-gradient(
-      ellipse 22% 30% at 15% 55%,
-      rgba(195,210,225,.58),
-      transparent 100%
-    ),
-    radial-gradient(
-      ellipse 25% 32% at 45% 65%,
-      rgba(195,210,225,.62),
-      transparent 100%
-    ),
-    radial-gradient(
-      ellipse 24% 30% at 78% 55%,
-      rgba(195,210,225,.58),
-      transparent 100%
-    );
-
-  filter: blur(24px);
-  animation: driftRight 22s linear infinite alternate;
+.fog-bank svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
 
-.fog-two {
-  bottom: 5%;
+.fog-bank path {
+  fill: #d8e4ee;
+  fill-opacity: .63;
+}
+
+.fog-bank.one {
+  top: 61%;
+  animation-duration: 16s;
+}
+
+.fog-bank.two {
+  top: 76%;
+  animation-duration: 22s;
+  animation-delay: -9s;
   opacity: .65;
-
-  background:
-    radial-gradient(
-      ellipse 24% 24% at 25% 60%,
-      rgba(175,195,215,.52),
-      transparent 100%
-    ),
-    radial-gradient(
-      ellipse 28% 28% at 65% 55%,
-      rgba(190,205,220,.55),
-      transparent 100%
-    );
-
-  filter: blur(35px);
-  animation: driftLeft 30s linear infinite alternate;
+  filter: blur(20px);
 }
 
-.fog-three {
-  bottom: -22%;
-  opacity: .70;
-
-  background:
-    radial-gradient(
-      ellipse 35% 35% at 35% 45%,
-      rgba(210,220,230,.50),
-      transparent 100%
-    ),
-    radial-gradient(
-      ellipse 35% 35% at 75% 50%,
-      rgba(195,210,225,.48),
-      transparent 100%
-    );
-
-  filter: blur(42px);
-  animation: driftRight 38s linear infinite alternate-reverse;
+.fog-bank.three {
+  top: 48%;
+  animation-duration: 28s;
+  animation-delay: -18s;
+  opacity: .42;
+  filter: blur(24px);
 }
 
-@keyframes driftRight {
+.fog-bank.two svg {
+  transform: scaleX(-1);
+}
+
+@keyframes crossing {
   from {
-    transform: translateX(-10%);
+    transform: translate3d(-110vw, 0, 0);
   }
   to {
-    transform: translateX(10%);
-  }
-}
-
-@keyframes driftLeft {
-  from {
-    transform: translateX(10%);
-  }
-  to {
-    transform: translateX(-10%);
+    transform: translate3d(170vw, 0, 0);
   }
 }
 
@@ -208,21 +171,16 @@ footer {
 /* MOBILE */
 
 @media (max-width: 600px) {
-  .hero {
-    background-position: center;
-  }
-
   .byline {
     width: 96%;
   }
 
-  .fog {
-    width: 300%;
-    left: -100%;
+  .fog-bank {
+    min-width: 310px;
   }
 }
 
-/* ACCESSIBILITY */
+/* REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -231,6 +189,10 @@ footer {
     animation: none !important;
     scroll-behavior: auto !important;
   }
+
+  .fog-bank {
+    display: none;
+  }
 }
 </style>
 </head>
@@ -238,12 +200,25 @@ footer {
 <body>
 
 <main>
-
   <section class="hero" aria-label="S.P. Stockemer">
 
-    <div class="fog fog-one" aria-hidden="true"></div>
-    <div class="fog fog-two" aria-hidden="true"></div>
-    <div class="fog fog-three" aria-hidden="true"></div>
+    <div class="fog-bank one" aria-hidden="true">
+      <svg viewBox="0 0 800 200" preserveAspectRatio="none">
+        <path d="M0 150 C40 105 75 122 120 91 C155 65 190 88 222 64 C270 28 308 76 352 55 C398 27 434 67 474 60 C525 38 545 83 586 75 C638 62 666 109 708 107 C750 106 783 128 800 152 L800 185 C705 168 661 195 570 176 C485 154 439 190 360 174 C280 155 227 194 148 178 C75 161 41 182 0 170Z"/>
+      </svg>
+    </div>
+
+    <div class="fog-bank two" aria-hidden="true">
+      <svg viewBox="0 0 800 200" preserveAspectRatio="none">
+        <path d="M0 150 C40 105 75 122 120 91 C155 65 190 88 222 64 C270 28 308 76 352 55 C398 27 434 67 474 60 C525 38 545 83 586 75 C638 62 666 109 708 107 C750 106 783 128 800 152 L800 185 C705 168 661 195 570 176 C485 154 439 190 360 174 C280 155 227 194 148 178 C75 161 41 182 0 170Z"/>
+      </svg>
+    </div>
+
+    <div class="fog-bank three" aria-hidden="true">
+      <svg viewBox="0 0 800 200" preserveAspectRatio="none">
+        <path d="M0 150 C40 105 75 122 120 91 C155 65 190 88 222 64 C270 28 308 76 352 55 C398 27 434 67 474 60 C525 38 545 83 586 75 C638 62 666 109 708 107 C750 106 783 128 800 152 L800 185 C705 168 661 195 570 176 C485 154 439 190 360 174 C280 155 227 194 148 178 C75 161 41 182 0 170Z"/>
+      </svg>
+    </div>
 
     <img
       class="byline"
@@ -261,7 +236,6 @@ footer {
     <h1>Welcome to the World of S.P. Stockemer</h1>
     <p>Official Author Website</p>
   </section>
-
 </main>
 
 <footer>
