@@ -4,25 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>S.P. Stockemer | Official Author Website</title>
-
 <style>
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background: #080b10;
   color: #e8e8e8;
   font-family: Georgia, serif;
 }
-
-/* CEMETERY BACKGROUND */
-
 .hero {
   position: relative;
   isolation: isolate;
@@ -33,18 +23,9 @@ body {
   align-items: center;
   justify-content: center;
   background:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,.10),
-      rgba(0,0,0,.08) 50%,
-      rgba(0,0,0,.55)
-    ),
-    url("Moonlit%20Fog%20Over%20the%20Haunted%20Cemetery.png")
-      center / cover no-repeat;
+    linear-gradient(to bottom, rgba(0,0,0,.10), rgba(0,0,0,.08) 50%, rgba(0,0,0,.55)),
+    url("Moonlit%20Fog%20Over%20the%20Haunted%20Cemetery.png") center / cover no-repeat;
 }
-
-/* MOVING FOG BANKS */
-
 .fog-bank {
   position: absolute;
   left: 0;
@@ -56,27 +37,17 @@ body {
   opacity: .75;
   filter: blur(15px);
   will-change: transform;
-  transform: translate3d(-110vw, 0, 0);
+  transform: translate3d(-110vw,0,0);
   animation: crossing 17s linear infinite;
 }
-
 .fog-bank svg {
   display: block;
   width: 100%;
   height: 100%;
   overflow: visible;
 }
-
-.fog-bank path {
-  fill: #d8e4ee;
-  fill-opacity: .63;
-}
-
-.fog-bank.one {
-  top: 61%;
-  animation-duration: 16s;
-}
-
+.fog-bank path { fill: #d8e4ee; fill-opacity: .63; }
+.fog-bank.one { top: 61%; animation-duration: 16s; }
 .fog-bank.two {
   top: 76%;
   animation-duration: 22s;
@@ -84,7 +55,6 @@ body {
   opacity: .65;
   filter: blur(20px);
 }
-
 .fog-bank.three {
   top: 48%;
   animation-duration: 28s;
@@ -92,44 +62,23 @@ body {
   opacity: .42;
   filter: blur(24px);
 }
-
-.fog-bank.two svg {
-  transform: scaleX(-1);
-}
-
+.fog-bank.two svg { transform: scaleX(-1); }
 @keyframes crossing {
-  from {
-    transform: translate3d(-110vw, 0, 0);
-  }
-  to {
-    transform: translate3d(170vw, 0, 0);
-  }
+  from { transform: translate3d(-110vw,0,0); }
+  to { transform: translate3d(170vw,0,0); }
 }
-
-/* ORIGINAL AUTHOR BYLINE */
-
 .byline {
   position: relative;
   z-index: 3;
-  width: min(88%, 1100px);
+  width: min(88%,1100px);
   height: auto;
   filter: drop-shadow(0 3px 18px rgba(0,0,0,.85));
   animation: reveal 3s ease-out both;
 }
-
 @keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
-/* EXPLORE LINK */
-
 .scroll-cue {
   position: absolute;
   bottom: 30px;
@@ -140,107 +89,317 @@ body {
   letter-spacing: 4px;
   text-transform: uppercase;
 }
-
-/* LOWER HOMEPAGE */
-
 .intro {
-  min-height: 45vh;
-  padding: 90px 24px;
+  padding: 90px 24px 70px;
   text-align: center;
   background: #080b10;
 }
-
 .intro h1 {
-  font-size: clamp(26px, 4vw, 44px);
+  font-size: clamp(26px,4vw,44px);
   font-weight: normal;
   letter-spacing: 3px;
+  line-height: 1.3;
 }
-
 .intro p {
   color: #aaa;
   font-size: 18px;
 }
-
+.section-heading {
+  text-align: center;
+  padding: 35px 24px 65px;
+}
+.section-heading h2 {
+  font-size: clamp(28px,4vw,46px);
+  font-weight: normal;
+  letter-spacing: 5px;
+  margin: 0 0 20px;
+}
+.section-heading p {
+  color: #a6a6a6;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+.ornament {
+  width: 100px;
+  height: 1px;
+  margin: 26px auto;
+  background: #a78c63;
+}
+.books {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 35px 100px;
+}
+.book {
+  display: grid;
+  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(35px,6vw,90px);
+  padding: 75px 0;
+  border-bottom: 1px solid rgba(200,200,200,.13);
+}
+.book:nth-child(even) {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+}
+.book:nth-child(even) .cover {
+  order: 2;
+}
+.book:nth-child(even) .book-info {
+  order: 1;
+}
+.cover {
+  width: 100%;
+  text-align: center;
+}
+.cover img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin: auto;
+  box-shadow: 0 18px 50px rgba(0,0,0,.65);
+}
+.book-info {
+  min-width: 0;
+}
+.book-info h3 {
+  font-size: clamp(29px,3.2vw,43px);
+  font-weight: normal;
+  line-height: 1.2;
+  margin: 0 0 28px;
+  color: #f2e9dc;
+}
+.book-info p {
+  color: #c3c3c3;
+  font-size: 16px;
+  line-height: 1.85;
+  margin: 0 0 18px;
+}
+.book-info .lead {
+  color: #e2d3bb;
+  font-size: 18px;
+}
+.buy-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 29px;
+  border: 1px solid #a78c63;
+  color: #e8d8bd;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: Georgia, serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  transition: background .25s, color .25s;
+}
+.buy-link:hover,
+.buy-link:focus-visible {
+  background: #a78c63;
+  color: #080b10;
+}
+.author-link {
+  padding: 70px 24px 85px;
+  text-align: center;
+  background: #0c1016;
+}
+.author-link h2 {
+  font-size: 28px;
+  font-weight: normal;
+}
+.author-link p {
+  color: #aaa;
+  line-height: 1.7;
+}
 footer {
   padding: 25px;
   text-align: center;
   color: #777;
   font-size: 13px;
 }
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-  .byline {
-    width: 96%;
+@media (max-width: 750px) {
+  .books { padding: 0 22px 70px; }
+  .book, .book:nth-child(even) {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 55px 0;
   }
-
-  .fog-bank {
-    min-width: 310px;
+  .book:nth-child(even) .cover,
+  .book:nth-child(even) .book-info {
+    order: initial;
   }
+  .cover img { max-width: 340px; }
+  .book-info h3 { text-align: center; }
+  .book-info p { font-size: 15px; }
 }
-
-/* REDUCED MOTION */
-
+@media (max-width: 600px) {
+  .byline { width: 96%; }
+  .fog-bank { min-width: 310px; }
+  .intro { padding: 65px 20px 45px; }
+}
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation: none !important;
     scroll-behavior: auto !important;
   }
-
-  .fog-bank {
-    display: none;
-  }
+  .fog-bank { display: none; }
 }
 </style>
 </head>
-
 <body>
-
 <main>
-  <section class="hero" aria-label="S.P. Stockemer">
 
-    <div class="fog-bank one" aria-hidden="true">
-      <svg viewBox="0 0 800 200" preserveAspectRatio="none">
-        <path d="M0 150 C40 105 75 122 120 91 C155 65 190 88 222 64 C270 28 308 76 352 55 C398 27 434 67 474 60 C525 38 545 83 586 75 C638 62 666 109 708 107 C750 106 783 128 800 152 L800 185 C705 168 661 195 570 176 C485 154 439 190 360 174 C280 155 227 194 148 178 C75 161 41 182 0 170Z"/>
-      </svg>
-    </div>
+<!-- ORIGINAL CEMETERY ENTRANCE -->
+<section class="hero" aria-label="S.P. Stockemer">
+  <div class="fog-bank one" aria-hidden="true">
+    <svg viewBox="0 0 800 200" preserveAspectRatio="none">
+      <path d="M0 150 C40 105 75 122 120 91 C155 65 190 88 222 64 C270 28 308 76 352 55 C398 27 434 67 474 60 C525 38 545 83 586 75 C638 62 666 109 708 107 C750 106 783 128 800 152 L800 185 C705 168 661 195 570 176 C485 154 439 190 360 174 C280 155 227 194 148 178 C75 161 41 182 0 170Z"/>
+    </svg>
+  </div>
+  <div class="fog-bank two" aria-hidden="true">
+    <svg viewBox="0 0 800 200" preserveAspectRatio="none">
+      <path d="M0 150 C40 105 75 122 120 91 C155 65 190 88 222 64 C270 28 308 76 352 55 C398 27 434 67 474 60 C525 38 545 83 586 75 C638 62 666 109 708 107 C750 106 783 128 800 152 L800 185 C705 168 661 195 570 176 C485 154 439 190 360 174 C280 155 227 194 148 178 C75 161 41 182 0 170Z"/>
+    </svg>
+  </div>
+  <div class="fog-bank three" aria-hidden="true">
+    <svg viewBox="0 0 800 200" preserveAspectRatio="none">
+      <path d="M0 150 C40 105 75 122 120 91 C155 65 190 88 222 64 C270 28 308 76 352 55 C398 27 434 67 474 60 C525 38 545 83 586 75 C638 62 666 109 708 107 C750 106 783 128 800 152 L800 185 C705 168 661 195 570 176 C485 154 439 190 360 174 C280 155 227 194 148 178 C75 161 41 182 0 170Z"/>
+    </svg>
+  </div>
+  <img class="byline" src="SPS%20BYLINE%20LOGO%20TRANS%20WHT.png" alt="S.P. Stockemer">
+  <a class="scroll-cue" href="#welcome">Explore &#8595;</a>
+</section>
 
-    <div class="fog-bank two" aria-hidden="true">
-      <svg viewBox="0 0 800 200" preserveAspectRatio="none">
-        <path d="M0 150 C40 105 75 122 120 91 C155 65 190 88 222 64 C270 28 308 76 352 55 C398 27 434 67 474 60 C525 38 545 83 586 75 C638 62 666 109 708 107 C750 106 783 128 800 152 L800 185 C705 168 661 195 570 176 C485 154 439 190 360 174 C280 155 227 194 148 178 C75 161 41 182 0 170Z"/>
-      </svg>
-    </div>
+<!-- WELCOME -->
+<section class="intro" id="welcome">
+  <h1>Welcome to the World of S.P. Stockemer</h1>
+  <p>Official Author Website</p>
+</section>
 
-    <div class="fog-bank three" aria-hidden="true">
-      <svg viewBox="0 0 800 200" preserveAspectRatio="none">
-        <path d="M0 150 C40 105 75 122 120 91 C155 65 190 88 222 64 C270 28 308 76 352 55 C398 27 434 67 474 60 C525 38 545 83 586 75 C638 62 666 109 708 107 C750 106 783 128 800 152 L800 185 C705 168 661 195 570 176 C485 154 439 190 360 174 C280 155 227 194 148 178 C75 161 41 182 0 170Z"/>
-      </svg>
-    </div>
+<!-- BOOK GALLERY -->
+<section id="books" aria-label="Books by S.P. Stockemer">
+  <div class="section-heading">
+    <h2>The Books</h2>
+    <div class="ornament"></div>
+    <p>Stories from the darker side of imagination</p>
+  </div>
 
-    <img
-      class="byline"
-      src="SPS%20BYLINE%20LOGO%20TRANS%20WHT.png"
-      alt="S.P. Stockemer"
-    >
+  <div class="books">
 
-    <a class="scroll-cue" href="#welcome">
-      Explore &#8595;
-    </a>
+    <!-- BOOK 1 -->
+    <article class="book">
+      <div class="cover">
+        <img src="OCTOBER%20RADIO%20HOUR%20COVER%20FINAL%20KDP%20OPT.png" alt="The October Radio Hour book cover" loading="lazy">
+      </div>
+      <div class="book-info">
+        <h3>The October Radio Hour</h3>
+        <p>The October Radio Hour is a Halloween horror anthology presented as a single 1940s radio broadcast that only airs during the month of October.</p>
+        <p>Hosted by the smooth, unseen voice of Graham Reaper, each broadcast introduces a new standalone tale of supernatural horror. Ride a bus that carries the dead to their final destination. Descend into a forgotten furnace level where Halloween never ended. Answer a hotel wake-up call from your future self. Watch candles in darkened windows guide something home that was never meant to return. Cross a river where the dead wait for the last ferry before dawn, and meet a stranger who arrives just a little too early for the final Halloween supper.</p>
+        <p>Written as prose with the pace and atmosphere of classic radio theater, these ten stories build toward a chilling conclusion as the broadcast itself begins to change.</p>
+        <p class="lead">Turn down the lights. Turn up the volume.<br>The October Radio Hour is about to begin.</p>
+        <a class="buy-link" href="https://www.amazon.com/dp/B0H7B3CMYL" target="_blank" rel="noopener noreferrer">View on Amazon</a>
+      </div>
+    </article>
 
-  </section>
+    <!-- BOOK 2 -->
+    <article class="book">
+      <div class="cover">
+        <img src="THE%20DEAD%20ORDER%20COVER%20FINAL.png" alt="The Dead Order book cover" loading="lazy">
+      </div>
+      <div class="book-info">
+        <h3>The Dead Order</h3>
+        <p class="lead">When death comes, most people expect judgment.<br>What they receive is paperwork.</p>
+        <p>A man awakens in a silent ward where every answer he gives is marked INCORRECT. A safety coordinator discovers her afterlife has already been claimed by something waiting beyond the intake desk. Across a vast bureaucracy that governs the dead, files move, claims are filed, identities are corrected, and every soul is processed according to rules no living person was ever meant to understand.</p>
+        <p>Within the hidden machinery of the Dead Order, clerks record the newly departed, auditors reconcile contradictions, and entire departments oversee what comes after the final breath. Some souls are misplaced. Some are disputed. Some discover that death is not an ending at all, but the beginning of a system far older and far larger than humanity ever imagined.</p>
+        <p>The Dead Order is a collection of ten interconnected horror stories exploring the strange administration of the afterlife, where every death opens a file, every file demands resolution, and the rules are never explained to those forced to obey them.</p>
+        <a class="buy-link" href="https://www.amazon.com/dp/B0H4S79B7G" target="_blank" rel="noopener noreferrer">View on Amazon</a>
+      </div>
+    </article>
 
-  <section class="intro" id="welcome">
-    <h1>Welcome to the World of S.P. Stockemer</h1>
-    <p>Official Author Website</p>
-  </section>
+    <!-- BOOK 3 -->
+    <article class="book">
+      <div class="cover">
+        <img src="The%20Dust%20%26%20The%20Damned%20Cover.png" alt="The Dust &amp; The Damned book cover" loading="lazy">
+      </div>
+      <div class="book-info">
+        <h3>The Dust &amp; The Damned</h3>
+        <p class="lead">Out on the edges of nowhere, the rules don’t hold.</p>
+        <p>The land remembers what was buried in it.<br>The wind carries things that don’t belong to the living.<br>And some roads don’t lead anywhere… they just take.</p>
+        <p>In this collection of dark, atmospheric horror, each story drags you deeper into places where something has already gone wrong—and isn’t finished yet.</p>
+        <p>No heroes.<br>No clean endings.<br>Just the slow realization that once you’ve stepped into it… you were never getting out.</p>
+        <p>If you like your horror quiet, relentless, and just a little too close to real, <strong>The Dust &amp; The Damned</strong> is waiting.</p>
+        <a class="buy-link" href="https://www.amazon.com/dp/B0GY2WCBXD" target="_blank" rel="noopener noreferrer">View on Amazon</a>
+      </div>
+    </article>
+
+    <!-- BOOK 4 -->
+    <article class="book">
+      <div class="cover">
+        <img src="Lanterns%20In%20The%20Fog%20Cover%20Final.png" alt="Lanterns in the Fog book cover" loading="lazy">
+      </div>
+      <div class="book-info">
+        <h3>Lanterns in the Fog</h3>
+        <p class="lead">There are places where something doesn’t stay where it belongs.</p>
+        <p>A voice comes through that shouldn’t exist.<br>A signal carries something it wasn’t meant to.<br>A room holds onto what happened inside it… and refuses to let it go.</p>
+        <p>Most people ignore it.</p>
+        <p>In these stories, the fog is not just something you walk through—it’s where reality begins to break its boundaries. The past doesn’t stay buried. Systems don’t shut down. Messages don’t stop once they’ve been sent.</p>
+        <p>They continue.</p>
+        <p>A late-night broadcast picks up something that already happened.<br>A forgotten object plays back more than sound.<br>A place remembers what was done there—and answers for it.</p>
+        <p>And the lanterns?</p>
+        <p>They don’t guide you out.</p>
+        <p>They illuminate what’s bleeding through—moment by moment—until the line between what <em>was</em>, what <em>is</em>, and what <em>should never return</em> collapses completely.</p>
+        <p>Because this isn’t random.</p>
+        <p>It’s structured.<br>It’s persistent.<br>And once it reaches you… it doesn’t let go.</p>
+        <p>Each story moves deeper into a world where events echo long after they end, where reality reshapes itself without warning, and where the truth arrives too late to escape it.</p>
+        <p>By the time you understand what you’re hearing…</p>
+        <p>It’s already happening to you.</p>
+        <p class="lead">Every light reveals what the fog tries to hide.</p>
+        <a class="buy-link" href="https://www.amazon.com/dp/B0GYPT6QPS" target="_blank" rel="noopener noreferrer">View on Amazon</a>
+      </div>
+    </article>
+
+    <!-- BOOK 5 -->
+    <article class="book">
+      <div class="cover">
+        <img src="Midnight%20Frights%20Cover%20Final.png" alt="Midnight Frights book cover" loading="lazy">
+      </div>
+      <div class="book-info">
+        <h3>Midnight Frights</h3>
+        <p class="lead">Tonight’s features… don’t fade when the lights come up.</p>
+        <p><em>Midnight Frights</em> is a collection of chilling tales inspired by the golden age of 1950s horror—where creatures lurk in the dark, experiments go wrong, and something always waits just beyond the edge of reason.</p>
+        <p>Each story plays like a lost late-night feature: strange, atmospheric, and creeping with dread. Small towns hide terrible secrets. The unknown refuses to stay buried. And the line between fiction and reality begins to slip.</p>
+        <p>But these aren’t just stories meant to entertain.<br>They linger.<br>They follow.<br>And when the final page turns, something remains.<br>Because not every nightmare ends when the lights come up.</p>
+        <p class="lead">Step into the dark.<br>Take your seat.<br>And stay through the end… if you can.</p>
+        <a class="buy-link" href="https://www.amazon.com/dp/B0GYSYRH8T" target="_blank" rel="noopener noreferrer">View on Amazon</a>
+      </div>
+    </article>
+
+    <!-- BOOK 6 -->
+    <article class="book">
+      <div class="cover">
+        <img src="The%20October%20Tales%20paperback%20cover.png" alt="The October Tales book cover" loading="lazy">
+      </div>
+      <div class="book-info">
+        <h3>The October Tales</h3>
+        <p><em>The October Tales</em> is a collection of eerie short stories rooted in the magic—and menace—of the Halloween season.</p>
+        <p>Across quiet towns and forgotten places, something waits just beyond the edge of the familiar. Shadows move where they shouldn’t. Old houses remember too much. And in some places, the darkness isn’t empty… it’s watching.</p>
+        <p>From cursed homes and restless spirits to deeper, more dangerous forces lurking behind the veil of autumn, each story pulls you further into a world where October isn’t just a season—it’s a gateway.</p>
+        <p>These are tales of nostalgia twisted into dread, where every flicker of candlelight holds back something that would rather see you in the dark.</p>
+        <p class="lead">The nights grow longer. October doesn’t end when the calendar does.</p>
+        <a class="buy-link" href="https://www.amazon.com/dp/B0GYYSBMKM" target="_blank" rel="noopener noreferrer">View on Amazon</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- AMAZON AUTHOR PAGE -->
+<section class="author-link">
+  <h2>Explore More</h2>
+  <p>Visit the official S.P. Stockemer author page on Amazon.</p>
+  <a class="buy-link" href="https://www.amazon.com/stores/S.P.-Stockemer/author/B0GZCJ7WGG" target="_blank" rel="noopener noreferrer">Amazon Author Page</a>
+</section>
+
 </main>
-
-<footer>
-  &copy; 2026 S.P. Stockemer. All rights reserved.
-</footer>
-
+<footer>&copy; 2026 S.P. Stockemer. All rights reserved.</footer>
 </body>
 </html>
