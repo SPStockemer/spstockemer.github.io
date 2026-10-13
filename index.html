@@ -37,13 +37,13 @@ body {
 .hero::after {
   content: "";
   position: absolute;
-  inset: 0;
+ inset: -25%;
   pointer-events: none;
   background:
     radial-gradient(ellipse at 20% 80%,
-      rgba(185,198,210,.22), transparent 45%),
+      rgba(185,198,210,.55), transparent 45%),
     radial-gradient(ellipse at 75% 90%,
-      rgba(190,200,215,.20), transparent 50%);
+      rgba(190,200,215,.50), transparent 50%);
   filter: blur(38px);
   animation: fogDrift 8s ease-in-out infinite alternate;
 }
