@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mortimer's Corner | S.P. Stockemer</title>
+<meta name="description" content="Welcome to Mortimer Quill's corner of the S.P. Stockemer website. Meet Mort, read his notes, and watch his spooky adventures.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Pirata+One&display=swap" rel="stylesheet">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: #e8e8e8;
+  font-family: Georgia, serif;
+}
+
+/* NAVIGATION */
+.site-nav {
+  background: #000;
+  border-bottom: 1px solid rgba(190,190,190,.25);
+  padding: 21px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px clamp(20px,4vw,65px);
+}
+
+.site-nav a {
+  font-family: 'Cinzel Decorative', Georgia, serif;
+  font-size: clamp(12px,1.35vw,16px);
+  color: #c8c8c8;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color .2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a[aria-current="page"] {
+  color: #fff;
+}
+
+/* SIGNATURE HEADER */
+.mort-header {
+  text-align: center;
+  padding: 65px 20px 35px;
+}
+
+.mort-signature {
+  display: block;
+  width: min(90%,650px);
+  height: auto;
+  margin: 0 auto;
+}
+
+.ornament {
+  width: 100px;
+  height: 1px;
+  margin: 30px auto;
+  background: #a78c63;
+}
+
+/* WRITING DESK */
+.desk-image {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.desk-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 18px 55px rgba(0,0,0,.7);
+}
+
+/* CONTENT */
+.mort-section {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 65px 25px 25px;
+}
+
+.mort-section h1,
+.mort-section h2,
+.adventures-heading h2 {
+  font-family: 'Pirata One', Georgia, serif;
+  font-size: clamp(30px,4vw,44px);
+  font-weight: normal;
+  letter-spacing: 2px;
+  color: #d2d2d2;
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+.mort-section p {
+  color: #c3c3c3;
+  font-size: 17px;
+  line-height: 1.9;
+  margin: 0 0 22px;
+}
+
+.mort-section .signoff {
+  color: #e2d3bb;
+  font-style: italic;
+  text-align: right;
+  margin-top: 30px;
+}
+
+.section-divider {
+  max-width: 850px;
+  height: 1px;
+  margin: 55px auto 0;
+  background: rgba(200,200,200,.15);
+}
+
+/* VIDEO ADVENTURES */
+.adventures {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 75px 30px 110px;
+}
+
+.adventures-heading {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.adventures-heading p {
+  color: #a6a6a6;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: clamp(35px,5vw,75px);
+  align-items: start;
+}
+
+.adventure {
+  min-width: 0;
+  text-align: center;
+}
+
+.adventure video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #111;
+  border: 1px solid rgba(200,200,200,.2);
+}
+
+.adventure h3 {
+  font-size: 25px;
+  font-weight: normal;
+  color: #f2e9dc;
+  margin: 30px 0 20px;
+}
+
+.adventure p {
+  color: #c3c3c3;
+  font-size: 16px;
+  line-height: 1.85;
+  text-align: left;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* FOOTER */
+footer {
+  padding: 25px;
+  text-align: center;
+  color: #777;
+  font-size: 13px;
+  border-top: 1px solid rgba(200,200,200,.13);
+}
+
+@media (max-width: 750px) {
+  .mort-header {
+    padding-top: 45px;
+  }
+
+  .mort-section {
+    padding: 50px 22px 15px;
+  }
+
+  .mort-section p {
+    font-size: 16px;
+  }
+
+  .adventures {
+    padding: 60px 22px 80px;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 65px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html#home">Home</a>
+  <a href="index.html#books">Books</a>
+  <a href="index.html#about">About the Author</a>
+  <a href="coming-soon.html">Coming Attractions</a>
+  <a href="mortimers-corner.html" aria-current="page">Mortimer's Corner</a>
+</nav>
+
+<main>
+
+<!-- MORTIMER'S SIGNATURE -->
+<header class="mort-header">
+  <img
+    class="mort-signature"
+    src="MORT%20SIG.png"
+    alt="Mortimer Quill's signature">
+  <div class="ornament"></div>
+</header>
+
+<!-- MORTIMER AT HIS DESK -->
+<div class="desk-image">
+  <img
+    src="MORT%20AT%20DESK.png"
+    alt="Mortimer Quill sitting at his writing desk">
+</div>
+
+<!-- WELCOME -->
+<section class="mort-section">
+  <h1>A Word from Mortimer</h1>
+
+  <p>Well, hello there!</p>
+
+  <p>I'm Mortimer Quill, but you can call me Mort. Everybody does.</p>
+
+  <p>Welcome to my little corner of the website! The Boss finally gave me a place of my own. I've been asking for one for ages, although he claims I never mentioned it. That's his story.</p>
+
+  <p>I spend most of my time writing, exploring interesting places, and occasionally getting into situations that probably seemed like better ideas beforehand. I particularly enjoy old cemeteries, moonlit walks, and anything that makes ordinary people look over their shoulders.</p>
+
+  <p>S.P. writes the scary stories. I prefer to live them. Well, sort of. Being a skeleton does have its advantages.</p>
+
+  <p>Anyway, make yourself comfortable, have a look around, and visit whenever you like. There's always something happening around here.</p>
+
+  <p>And if the Boss asks, tell him I've been working.</p>
+
+  <p class="signoff">Mortimer Quill</p>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ABOUT MORTIMER -->
+<section class="mort-section">
+  <h2>A Few Things About Me</h2>
+
+  <p>Since you're here, I suppose I should tell you a little more about myself.</p>
+
+  <p>My birthday is August 10. I'm not entirely sure how old I am, but I look pretty good for someone who's been reduced to bones.</p>
+
+  <p>I enjoy writing, reading, exploring old cemeteries, and taking long walks after dark. The Boss and I have been on a few adventures together, although he insists on bringing a camera everywhere. Personally, I think some things are better left unexplained.</p>
+
+  <p>I have a particular fondness for Halloween, but I don't see why we should limit spooky things to one month of the year. That's just poor planning.</p>
+
+  <p>People sometimes ask whether being a skeleton makes everyday life difficult. Not particularly. I don't have to worry about getting older, I never need a haircut, and I've saved a fortune on groceries.</p>
+
+  <p>Of course, finding clothes that fit can be a nightmare.</p>
+
+  <p>But enough about me. There are places to explore, stories to tell, and a whole world full of interesting things waiting in the dark.</p>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- MORT'S ADVENTURES -->
+<section class="adventures">
+
+  <div class="adventures-heading">
+    <h2>Mort's Adventures</h2>
+    <div class="ornament"></div>
+    <p>A little evidence of what I've been up to</p>
+  </div>
+
+  <div class="video-grid">
+
+    <!-- PUMPKIN CARVING -->
+    <article class="adventure">
+      <video controls preload="metadata" playsinline>
+        <source
+          src="MORT%20WELCOMES%20OCTOBER%2026.mp4"
+          type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+
+      <h3>Pumpkin Carving</h3>
+
+      <p>The Boss handed me a pumpkin and a carving knife. I'm not sure what he expected, but I think the pumpkin was more nervous than I was.</p>
+    </article>
+
+    <!-- CEMETERY WALK -->
+    <article class="adventure">
+      <video controls preload="metadata" playsinline>
+        <source
+          src="SPOOKY%20SEASON%2026%20SS%20%26%20MQ.mp4"
+          type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+
+      <h3>The Cemetery Walk</h3>
+
+      <p>The Boss and I went for a moonlit stroll through the cemetery. Beautiful night, lovely atmosphere, and plenty of interesting company. Of course, most of them have been dead considerably longer than I have.</p>
+    </article>
+
+  </div>
+</section>
+
+</main>
+
+<footer>&copy; 2026 S.P. Stockemer. All rights reserved.</footer>
+
+</body>
+</html>
