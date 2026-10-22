@@ -1,1 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Screening Room | S.P. Stockemer</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Pirata+One&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #000;
+  color: #e8e8e8;
+  font-family: Georgia, serif;
+}
+
+/* NAVIGATION */
+.site-nav {
+  background: #000;
+  border-bottom: 1px solid rgba(190,190,190,.25);
+  padding: 21px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px clamp(20px,4vw,65px);
+}
+
+.site-nav a {
+  font-family: 'Cinzel Decorative', Georgia, serif;
+  font-size: clamp(12px,1.35vw,16px);
+  color: #c8c8c8;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color .2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a[aria-current="page"] {
+  color: #fff;
+}
+
+/* HEADER */
+.hero {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* INTRODUCTION */
+.intro {
+  text-align: center;
+  padding: 55px 20px 60px;
+}
+
+.intro p {
+  color: #b9b0a5;
+  font-size: 17px;
+  letter-spacing: 1px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.ornament {
+  width: 100px;
+  height: 1px;
+  margin: 28px auto 0;
+  background: #a78c63;
+}
+
+/* VIDEO GALLERY */
+.films {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 35px 110px;
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 75px 55px;
+}
+
+.film {
+  text-align: center;
+  min-width: 0;
+}
+
+.film h2 {
+  font-family: 'Cinzel Decorative', Georgia, serif;
+  font-size: clamp(18px,2vw,25px);
+  font-weight: normal;
+  color: #e2d3bb;
+  margin: 0 0 12px;
+}
+
+.film .year {
+  color: #a78c63;
+  font-size: 13px;
+  letter-spacing: 3px;
+  margin: 0 0 22px;
+}
+
+.film video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #080808;
+  border: 1px solid rgba(167,140,99,.35);
+  box-shadow: 0 12px 40px rgba(0,0,0,.7);
+}
+
+/* FOOTER */
+footer {
+  padding: 25px;
+  text-align: center;
+  color: #777;
+  font-size: 13px;
+  border-top: 1px solid rgba(200,200,200,.13);
+}
+
+@media (max-width: 750px) {
+  .intro {
+    padding: 40px 20px 50px;
+  }
+
+  .intro p {
+    font-size: 15px;
+  }
+
+  .films {
+    grid-template-columns: 1fr;
+    gap: 65px;
+    padding: 0 22px 80px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html#home">Home</a>
+  <a href="index.html#books">Books</a>
+  <a href="index.html#about">About the Author</a>
+  <a href="mortimers-corner.html">Mortimer's Corner</a>
+  <a href="coming-soon.html">Coming Attractions</a>
+  <a href="screening-room.html" aria-current="page">Screening Room</a>
+</nav>
+
+<main>
+
+<header class="hero">
+  <img
+    src="The%20Haunted%20Screening%20Room.png"
+    alt="The Haunted Screening Room, a vintage horror movie theater">
+</header>
+
+<section class="intro">
+  <p>Take your seat. The lights are going down.</p>
+  <div class="ornament"></div>
+</section>
+
+<section class="films" aria-label="Book launch films">
+
+<!-- THE OCTOBER RADIO HOUR -->
+<article class="film">
+  <h2>The October Radio Hour</h2>
+  <p class="year">2026</p>
+  <video controls preload="none" playsinline>
+    <source
+      src="https://github.com/SPStockemer/spstockemer.github.io/releases/download/screening-room-v1/THE.OCTOBER.RADIO.HOUR.LAUNCH.PROMO.mp4"
+      type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+</article>
+
+<!-- THE DEAD ORDER -->
+<article class="film">
+  <h2>The Dead Order</h2>
+  <p class="year">2026</p>
+  <video controls preload="none" playsinline>
+    <source
+      src="https://github.com/SPStockemer/spstockemer.github.io/releases/download/screening-room-v1/THE.DEAD.ORDER.FINAL.PROMO.mp4"
+      type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+</article>
+
+<!-- THE DUST & THE DAMNED -->
+<article class="film">
+  <h2>The Dust &amp; The Damned</h2>
+  <p class="year">2026</p>
+  <video controls preload="none" playsinline>
+    <source
+      src="https://github.com/SPStockemer/spstockemer.github.io/releases/download/screening-room-v1/THE.DUST.THE.DAMNED.PROMO.mp4"
+      type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+</article>
+
+<!-- LANTERNS IN THE FOG -->
+<article class="film">
+  <h2>Lanterns in the Fog</h2>
+  <p class="year">2026</p>
+  <video controls preload="none" playsinline>
+    <source
+      src="https://github.com/SPStockemer/spstockemer.github.io/releases/download/screening-room-v1/LANTERNS.IN.THE.FOG.PROMO.mp4"
+      type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+</article>
+
+<!-- MIDNIGHT FRIGHTS -->
+<article class="film">
+  <h2>Midnight Frights</h2>
+  <p class="year">2025</p>
+  <video controls preload="none" playsinline>
+    <source
+      src="Midnight%20Frights%20promo%203.mp4"
+      type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+</article>
+
+<!-- THE OCTOBER TALES -->
+<article class="film">
+  <h2>The October Tales</h2>
+  <p class="year">2025</p>
+  <video controls preload="none" playsinline>
+    <source
+      src="The%20October%20Tales%20Promo.mp4"
+      type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+</article>
+
+</section>
+</main>
+
+<footer>
+  &copy; 2026 S.P. Stockemer. All rights reserved.
+</footer>
+
+</body>
+</html>
